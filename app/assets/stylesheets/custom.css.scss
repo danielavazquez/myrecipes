@@ -1,9 +1,12 @@
 
+$navbar-expand-lg: black; // initialize the $navbar-default-bg (after importing bootstrap/variables)
+@import "bootstrap/scss/bootstrap";
+
 // ---------- NAVBAR ----------
 #logo {
     float: left;
     font-size: 1.7em;
-    color: green;
+    color: #fff;
     text-transform: uppercase;
     letter-spacing: -1px;
     font-weight: bold;
