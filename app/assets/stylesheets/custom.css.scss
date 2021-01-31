@@ -1,12 +1,9 @@
-$navbar-expand-lg: black;
-
-
 
 // ---------- NAVBAR ----------
 #logo {
     float: left;
     font-size: 1.7em;
-    color: #fff;
+    color: green;
     text-transform: uppercase;
     letter-spacing: -1px;
     font-weight: bold;
@@ -16,10 +13,6 @@ $navbar-expand-lg: black;
     color: #fff;
     text-decoration: none;
 
-}
-
-.bg-light {
-    background-color:#073b15 !important;
 }
 
 // ---------- END NAVBAR ----------
