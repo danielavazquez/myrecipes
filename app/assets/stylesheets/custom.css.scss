@@ -1,6 +1,10 @@
 
-$navbar-expand-lg: black; // initialize the $navbar-default-bg (after importing bootstrap/variables)
-@import "bootstrap/scss/bootstrap";
+$navbar-expand-lg: black;
+
+@import 'bootstrap/dist/css/bootstrap';
+// @import "bootstrap/scss/bootstrap";
+// @import "bootstrap";
+
 
 // ---------- NAVBAR ----------
 #logo {
@@ -15,7 +19,35 @@ $navbar-expand-lg: black; // initialize the $navbar-default-bg (after importing 
 #logo:hover {
     color: #fff;
     text-decoration: none;
-
 }
 
 // ---------- END NAVBAR ----------
+
+//---------- HOMEPAGE ----------
+.center {
+    text-align: center;
+}
+
+.jumbotron {
+    background-image: asset-url('hero-pasta.jpg');
+    background-size: cover;
+    height: 300px;
+}
+
+.jumbotron h1,h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+.btn-x-lg {
+    background-color: black;
+}
+
+.btn-x-lg:hover {
+    color: #fff;
+    text-decoration: none;
+}
+//---------- END HOMEPAGE ----------
