@@ -7,8 +7,6 @@ ruby '2.7.2'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 gem 'bootstrap', '~> 5.0.0.beta1'
 gem 'jquery-rails'
-# Use postgresql as the database for Active Record
-gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -50,6 +48,12 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+end
+
+
+group :production do 
+# Use postgresql as the database for Active Record
+gem 'pg', '>= 0.18', '< 2.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
