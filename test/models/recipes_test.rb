@@ -2,7 +2,13 @@ require 'test_helper'
 
 class RecipeTest < ActiveSupport::TestCase
 	def setup
-		@recipe = Recipe.new(name: "vegetable", description: "great vegetable recipe")
+		@chef = Chef.create!(chefname: "mashrur", email: "mashrur@example.com") #need this because we have a one to many association
+		@recipe = @chef.recipes.build(name: "vegetable", description: "great vegetable recipe") #chef id automatically assigned to it and association is built correctly
+	end
+	
+	test "recipe without chef should be invalid" do
+		@recipe.chef_id = nil
+		assert_not @recipe.valid? #if the chef id turns nil (chef associated with the recipe disappears the recipe should be invalid)
 	end
 
 	test "recipe should be valid" do
