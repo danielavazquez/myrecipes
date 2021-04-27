@@ -17,7 +17,15 @@
   test "should get recipes listing" do
     get recipes_path
     assert_template 'recipes/index'
-    assert_match @recipe.name, response.body  #both recipe names show up in listing index page, want name to be a url
-    assert_match @recipe2.name, response.body
+    assert_select "a[href=?]", recipe_path(@recipe), text: @recipe.name #look for a link in the page and match to the path and text name variable
+    assert_select "a[href=?]", recipe_path(@recipe2), text: @recipe2.name
+  end
+
+  test "should get recipes show view" do
+    get recipe_path(@recipe) #need to pass in recipe object whose URL you're going to
+    assert_template 'recipes/show'
+    assert_match @recipe.name, response.body
+    assert_match @recipe.description, response.body
+    assert_match @chef.chefname, response.body
   end
 end
