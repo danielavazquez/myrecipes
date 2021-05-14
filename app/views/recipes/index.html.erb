@@ -2,8 +2,8 @@
 <% @recipes.each do |recipe|%>
   <div class=" well row bg-light mb-5">
     <div class="col-md-2">
-      <section class="center">
-      
+      <section class=" chef_info center">
+      <%= gravatar_for(recipe.chef, size: 120) %>
       </section>
     </div>
 
@@ -12,7 +12,7 @@
       <p><%=  truncate(recipe.description, length: 150) %></p>
       <p>
         <span class="quiet">
-          <small>Created<%= time_ago_in_words(recipe.created_at) %> ago</small>
+          <small>Created <%= time_ago_in_words(recipe.created_at) %> ago</small>
         </span>
       </p>
     </div>
