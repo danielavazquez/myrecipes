@@ -34,12 +34,18 @@
     assert_template 'recipes/new'
     name_of_recipe = "chicken saute"
     description_of_recipe = "add chicken, add vegetables, cook for 20 minutes, serve delicious meal"
+    assert_difference 'Recipe.count', 1 do 
+      post recipes_path, params: { recipe: { name: name_of_recipe, description: description_of_recipe}}
+    end
+    follow_redirect!
+    assert_match name_of_recipe.capitalize, response.body
+    assert_match description_of_recipe, response.body
   end
 
   test "reject invalid recipe submissions" do
     get new_recipe_path
     assert_template 'recipes/new'
-    assert_no_difference 'Recipe.count' do
+    assert_no_difference 'Recipe.count' do #for a failed submission
       post recipes_path, params: { recipe:  {name: " ", description: " "} }
     end
 
