@@ -21,6 +21,15 @@ $navbar-expand-lg: black;
     text-decoration: none;
 }
 
+a {
+    color: #fff !important;
+    font-weight: bold;
+}
+
+.jumbotron {
+    margin-top: 10px;
+}
+
 // ---------- END NAVBAR ----------
 
 //---------- HOMEPAGE ----------
@@ -51,7 +60,7 @@ $navbar-expand-lg: black;
 }
 
 .btn-x-lg {
-    background-color: black;
+    background-color:#000;
 }
 
 .btn-x-lg:hover {

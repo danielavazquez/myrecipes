@@ -1,6 +1,5 @@
-<div class="testing">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" id="logo" href="/">MyRecipes</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+  <a class="navbar-brand" id="logo" href="/">My Recipes</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -17,7 +16,7 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Recipes
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdown">
           <%= link_to "Create a New recipe", new_recipe_path, class: "dropdown-item" %>
           <a class="dropdown-item" href="/">Another action</a>
           <div class="dropdown-divider"></div>
@@ -34,4 +33,3 @@
     </form>
   </div>
 </nav>
-</div>
