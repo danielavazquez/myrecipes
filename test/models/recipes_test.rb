@@ -2,7 +2,8 @@ require 'test_helper'
 
 class RecipeTest < ActiveSupport::TestCase
 	def setup
-		@chef = Chef.create!(chefname: "mashrur", email: "mashrur@example.com") #need this because we have a one to many association
+		@chef = Chef.create!(chefname: "mashrur", email: "mashrur@example.com",
+												password: "password", password_confirmation: "password") #need this because we have a one to many association
 		@recipe = @chef.recipes.build(name: "vegetable", description: "great vegetable recipe") #chef id automatically assigned to it and association is built correctly
 	end
 	
