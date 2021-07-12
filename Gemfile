@@ -5,7 +5,8 @@ ruby '2.7.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
-gem 'bootstrap', '~> 5.0.0.beta1'
+# gem 'bootstrap', '~> 5.0.0.beta1'
+gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails'
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -23,6 +24,9 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'will_paginate', '3.1.7'
+# gem 'bootstrap-will_paginate', '0.0.10'
+gem 'will_paginate-bootstrap'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
