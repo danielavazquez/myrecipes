@@ -29,15 +29,30 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
+        <li class="nav-item form-inline m-2">
         <%= link_to "Login", login_path %>
+        </li>
+        <li class="nav-item form-inline m-2">
         <%= link_to "Log Out", logout_path, method: :delete %>
-          <a class="nav-link" href="#">Link</a>
         </li>
       </ul>
     </form>
+
+<div class="dropdown show">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown link
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item bg-secondary" href="<%= login_path %>">Login</a>
+
+    <%= link_to "Login", login_path, class: "dropdown-item bg-secondary" %>
+    <%= link_to "Log Out", logout_path, method: :delete, class: "dropdown-item bg-secondary" %>
+  </div>
+</div>
+
+    
   </div>
 </nav>
