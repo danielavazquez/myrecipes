@@ -29,30 +29,20 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item form-inline m-2">
-        <%= link_to "Login", login_path %>
-        </li>
-        <li class="nav-item form-inline m-2">
-        <%= link_to "Log Out", logout_path, method: :delete %>
-        </li>
+      <ul class="nav navbar-nav navbar-right">
+        <% if logged_in? %>
+          <li class="dropdown m-3">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_chef.chefname.capitalize %>'s Profile <span class="caret"></span></a>
+            <ul class="dropdown-menu bg-secondary m-3">
+              <li class="mx-2"><%= link_to "View your profile", chef_path(current_chef), class: "bg-secondary" %></li>
+              <li class="mx-2"><%= link_to "Edit your profile", edit_chef_path(current_chef), class: "bg-secondary" %></li>
+              <li class="mx-2"><%= link_to "Log out", logout_path, method: :delete, class: "bg-secondary" %></li>
+            </ul>
+          </li>
+        <% else %>       
+          <li class="m-3"><%= link_to "Log in", login_path %></li>  
+        <% end %>
       </ul>
     </form>
-
-<div class="dropdown show">
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown link
-  </a>
-
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item bg-secondary" href="<%= login_path %>">Login</a>
-
-    <%= link_to "Login", login_path, class: "dropdown-item bg-secondary" %>
-    <%= link_to "Log Out", logout_path, method: :delete, class: "dropdown-item bg-secondary" %>
-  </div>
-</div>
-
-    
   </div>
 </nav>
