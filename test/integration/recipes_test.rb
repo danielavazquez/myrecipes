@@ -23,6 +23,7 @@
   end
 
   test "should get recipes show" do
+    sign_in_as(@chef, "password")
     get recipe_path(@recipe) #need to pass in recipe object whose URL you're going to
     assert_template 'recipes/show'
     assert_match @recipe.name, response.body
@@ -34,6 +35,7 @@
   end
 
   test "create new valid recipe" do
+    sign_in_as(@chef, "password")
     get new_recipe_path
     assert_template 'recipes/new'
     name_of_recipe = "chicken saute"
