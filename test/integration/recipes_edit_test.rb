@@ -9,6 +9,7 @@ class RecipesEditTest < ActionDispatch::IntegrationTest
   end
 
   test "reject invalid recipe update" do
+    sign_in_as(@chef, "password")
     get edit_recipe_path(@recipe) #go to our edit path and it gets the recipe :id so we pass in the @recipe object 
     assert_template 'recipes/edit' #assert the template
     patch recipe_path(@recipe), params: { recipe: { name: " ", description: "some description"} } #update the recipe and post to recipe_path @recipe and params is what we are submitting, this should reject because the name is empty
@@ -18,6 +19,7 @@ class RecipesEditTest < ActionDispatch::IntegrationTest
   end
 
   test "successfully edit a recipe" do
+    sign_in_as(@chef, "password")
     get edit_recipe_path(@recipe)
     assert_template 'recipes/edit'
     updated_name = "updated recipe name"
