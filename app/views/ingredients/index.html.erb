@@ -4,14 +4,14 @@
   <div class="pagination">
     <%= will_paginate %>
   </div>
-  <% @ingredients.each do |ing|%>
+  <% @ingredients.each do |ingredient|%>
   <ul class="listing">
     <div class="row">
       <div class="well bg-light col-md-12">
-      <li class="chef-title"><%= link_to ing.name.capitalize, ingredient_path(ing) %></li>
-      <li><small><%= pluralize(ing.recipes.count, "recipe") if ing.recipes %></small></li>
+      <li class="chef-title"><%= link_to ingredient.name.capitalize, ingredient_path(ingredient) %></li>
+      <li><small><%= pluralize(ingredient.recipes.count, "recipe") if ingredient.recipes %></small></li>
       <% if logged_in? && current_chef.admin? %>
-        <li><%= link_to "Edit this ingredient", edit_ingredient_path(ing) %></li>
+        <li><%= link_to "Edit this ingredient", edit_ingredient_path(ingredient) %></li>
       <% end %>        
       </div>
     </div>
