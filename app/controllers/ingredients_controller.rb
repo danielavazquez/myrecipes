@@ -2,6 +2,7 @@ class IngredientsController < ApplicationController
   before_action :set_ingredient, only: [:edit, :update, :show]
   
   def new
+    @ingredient = Ingredient.new
   end
   
   def create
@@ -10,7 +11,7 @@ class IngredientsController < ApplicationController
   def edit
   end
 
-  def updated
+  def update
   end
 
   def show
