@@ -5,7 +5,10 @@
     <hr />
       <%= simple_format(@recipe.description) %>
       <hr />
-      <div class="float-right">
+      <% if @recipe.ingredients.any?%>
+      <p class="bg-primary">Ingredients: <%= render @recipe.ingredients, class: "ingredient-green" %></p>
+      <% end %>
+        <div class="float-right">
       <p class="center">
       <em>Created by:</em>
       </p>

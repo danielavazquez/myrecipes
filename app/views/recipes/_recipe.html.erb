@@ -12,7 +12,7 @@
       <p>
 
       <% if recipe.ingredients.any? %>
-        <p>Ingredients: <% render recipe.ingredients %></p>
+        <p>Ingredients: <%= render recipe.ingredients %></p>
       <% end %>
         <span class="quiet">
           <small>Created <%= time_ago_in_words(recipe.created_at) %> ago by <%= recipe.chef.chefname.capitalize %></small>
