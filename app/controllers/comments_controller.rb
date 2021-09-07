@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   def create
     @recipe = Recipe.find(params[:recipe_id])
     @comment = @recipe.comments.build(comment_params)
-    @comment.chef = current_chef #we associate the chef, require user is in the applicationcontroller
+    @comment.chef = current_chef
     if @comment.save
       flash[:success] = "Comment was created successfully"
       redirect_to recipe_path(@recipe)
