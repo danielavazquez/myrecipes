@@ -2,7 +2,8 @@ class ChatroomsController < ApplicationController
 
   def show
     @message = Message.new
-    @messages = Message.all
+    @messages = Message.most_recent
+   
   end
 
 end
