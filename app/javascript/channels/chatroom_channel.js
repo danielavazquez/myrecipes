@@ -14,4 +14,3 @@ consumer.subscriptions.create("ChatroomChannel", {
     $('#message_content').val('');
   }
 });
-
