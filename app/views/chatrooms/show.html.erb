@@ -8,7 +8,7 @@
 
     
     <hr />
-    <div class="message-continer">
+    <div class="message-container">
       <%= form_for( @message, remote:true, :html => {class: "form-horizontal", role: "form"}) do |f| %>
         <%= f.text_area :content, class: "form-control", placeholder: "Say something!" %>
         <%= f.submit "Send", class: 'btn btn-primary' %>
