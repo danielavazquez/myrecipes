@@ -52,3 +52,9 @@ Message:
     content:text
     chef_id:integer
 
+Admin User:
+email: rocky@example.com
+password: password
+
+Regular User: john@example.com
+password: password
